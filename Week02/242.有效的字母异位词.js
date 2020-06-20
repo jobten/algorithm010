@@ -1,3 +1,11 @@
+/*
+ * @lc app=leetcode.cn id=242 lang=javascript
+ *
+ * [242] 有效的字母异位词
+ */
+
+// @lc code=start
+
 // 解法二： 利用哈希表
 
 /**
@@ -39,3 +47,5 @@ var isAnagram = function(s, t) {
 //     }
 //     return s.split('').sort().join('') === t.split('').sort().join('')
 // };
+// @lc code=end
+
