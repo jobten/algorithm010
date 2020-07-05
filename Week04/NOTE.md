@@ -100,5 +100,31 @@ function wideTraversal(selectNode) {
 
 **题目:**使用二分查找，寻找一个半有序数组 [4, 5, 6, 7, 0, 1, 2] 中间无序的地方
 
-**思路:**二分查找到当前值比前后2个数都小的数即为中间无序的地方
+**思路:**
+
+二分查找，在无序部分继续二分查找，直到左右各只有一个数，取小的数
+
+**代码如下：**
+
+```javascript
+var search = function(nums) {
+    let n = nums.length || 0
+    if (!nums) ruturn -1
+    let l = 0
+    let r = n - 1
+    while(l < r) {
+        let mid = (l + r) / 2
+        // 左半部分有序，在右边查找
+        if (nums[0] <= nums[mid]) {
+            l = mid + 1
+        } else { // 右半边有序，在左边查找
+            r = mid -1
+        }
+    }
+    // 此时l等于r为无序的地方
+    return l;
+};
+```
+
+
 
