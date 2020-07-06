@@ -102,27 +102,46 @@ function wideTraversal(selectNode) {
 
 **思路:**
 
-二分查找，在无序部分继续二分查找，直到左右各只有一个数，取小的数
+二分查找
+1. 找到数组的中间元素 mid。
+2. 如果中间元素 > 数组第一个元素，我们需要在 mid 右边搜索变化点。
+3. 如果中间元素 < 数组第一个元素，我们需要在 mid 做边搜索变化点。
+4. 当我们找到变化点时停止搜索，当以下条件满足任意一个即可：
+nums[mid] > nums[mid + 1]，因此 mid+1 是最小值。
+nums[mid - 1] > nums[mid]，因此 mid 是最小值。
 
 **代码如下：**
 
 ```javascript
 var search = function(nums) {
-    let n = nums.length || 0
+let n = nums.length || 0
     if (!nums) ruturn -1
+
+    if (n === 1) {
+        return nums[0]
+    }
+
     let l = 0
     let r = n - 1
-    while(l < r) {
-        let mid = (l + r) / 2
+
+    if (nums[r] > nums[l]) {
+        return nums[0]
+    }
+
+    while(l <= r) {
+        // 注意要求整，不然会出现小数点
+        let mid = parseInt(l + (r - l) / 2)
+        if (nums[mid] > nums[mid + 1]) return nums[mid + 1]
+        if (nums[mid - 1] > nums[mid]) return nums[mid]
+
         // 左半部分有序，在右边查找
-        if (nums[0] <= nums[mid]) {
+        if (nums[0] < nums[mid]) {
             l = mid + 1
         } else { // 右半边有序，在左边查找
             r = mid -1
         }
     }
-    // 此时l等于r为无序的地方
-    return l;
+    return -1
 };
 ```
 
