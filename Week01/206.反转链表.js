@@ -1,3 +1,10 @@
+/*
+ * @lc app=leetcode.cn id=206 lang=javascript
+ *
+ * [206] 反转链表
+ */
+
+// @lc code=start
 // 方法二：递归
 
 /**
@@ -47,3 +54,5 @@ var reverseList = function(head) {
 //     }
 //     return prev
 // };
+// @lc code=end
+

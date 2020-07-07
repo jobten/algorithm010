@@ -1,3 +1,10 @@
+/*
+ * @lc app=leetcode.cn id=283 lang=javascript
+ *
+ * [283] 移动零
+ */
+
+// @lc code=start
 // 方法四(最优解)：双指针法,通过交换优化,遇到非零时互换快慢指针，遇到零时不操作
 
 /**
@@ -84,3 +91,5 @@ var moveZeroes = function(nums) {
 //         nums[i] = tempNums[i]
 //     }
 // };
+// @lc code=end
+

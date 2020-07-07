@@ -1,3 +1,10 @@
+/*
+ * @lc app=leetcode.cn id=70 lang=javascript
+ *
+ * [70] 爬楼梯
+ */
+
+// @lc code=start
 // 解法三：动态规划, 添加临时变量
 /**
  * @param {number} n
@@ -45,3 +52,5 @@ var climbStairs = function(n) {
 //     }
 //     return func(n)
 // };
+// @lc code=end
+
