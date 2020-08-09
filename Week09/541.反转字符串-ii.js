@@ -1,0 +1,24 @@
+/*
+ * @lc app=leetcode.cn id=541 lang=javascript
+ *
+ * [541] 反转字符串 II
+ */
+
+// @lc code=start
+/**
+ * @param {string} s
+ * @param {number} k
+ * @return {string}
+ */
+var reverseStr = function(s, k) {
+    var result = '';
+    var isReverse = false;
+    for (var i = 0, len = s.length; i < len; i += k) {
+      var str = s.slice(i, i + k);
+      result += isReverse ? str : str.split('').reverse().join('');
+      isReverse = !isReverse
+    }
+    return result;
+};
+// @lc code=end
+
